@@ -81,6 +81,10 @@ def main():
                         help='Name for saving model weights')
     parser.add_argument('--datasets', type=str, default='MNIST',
                         help='Datasets for model')
+    parser.add_argument('--k', type=int, default='3',
+                        help='number for k-nn method')
+    parser.add_argument('--nn_index', type=int, default='10',
+                        help='number for k-nn neighbors')
     args = parser.parse_args()
 
     logger.set_logfile_name(args.log_name)
@@ -126,7 +130,14 @@ def main():
 
     image, label = datasetsCollection.MNIST_random_image
     
-    target_output_distribution = model(image)
+    target_output_distribution = model.forward(image)
+    copy_train_loader, copy_test_loader = datasetsCollection.MNIST_dataset(args.batch_size, args.test_batch_size, **kwargs)
+    index_set = set()
+
+    forwarded_copy_train_loader = list(map(model.forward(), copy_train_loader))
+    
+    F.pairwise_distance(target_output_distribution, target_output_distribution)
+
 
 
 

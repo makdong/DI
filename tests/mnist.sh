@@ -12,4 +12,6 @@ python3 ../main.py --log_name 'mnist_training_CNN' \
     --inversion_momentum 0.9 \
     --save_model \
     --model_save_name 'mnist_cnn.pt' \
-    --model_loaded
+    --model_loaded \
+    --k 3 \
+    --nn_index 10
