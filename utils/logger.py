@@ -11,7 +11,7 @@ logger.setLevel(logging.INFO)
 # format of log
 formatter = logging.Formatter('%(levelname)s - %(message)s')
 
-log_dir = '../tests/logs/'
+log_dir = './tests/logs/'
 if not os.path.exists(log_dir):
     os.mkdir(log_dir)
 

@@ -1,6 +1,6 @@
 #!bin/bash
 
-python3 ../main.py --log_name 'mnist_training_CNN' \
+python3 main.py --log_name 'mnist_training_CNN' \
     --model 'CNN' \
     --datasets 'MNIST' \
     --batch_size 128 \
@@ -14,4 +14,5 @@ python3 ../main.py --log_name 'mnist_training_CNN' \
     --model_save_name 'mnist_cnn.pt' \
     --model_loaded \
     --k 3 \
-    --nn_index 10
+    --inversion_class_number 0 \
+    --inversion_epochs 300
